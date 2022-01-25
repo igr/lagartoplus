@@ -1,10 +1,11 @@
 package ac.obl.webscaper
 
 fun main() {
-    val browser = Browser()
+    val session = Browser(withProxy = true).get()
 
-    val page = browser.open("https://igo.rs/#home")
+    val page = session.open("https://igo.rs/#home")
+
     println(page.html())
 
-    browser.close()
+    session.close()
 }
